@@ -1,0 +1,46 @@
+dspfrontend:
+  n_fft: 512
+  hop_length: 256
+  n_mels: 64
+
+lcnn:
+  input_channels: 1
+  output_channels: 16
+  kernel_size: 3
+  stride: 1
+  padding: 1
+
+model:
+  input_channels: 1
+  lcnn_channels: 128
+  num_classes: 2
+
+params:
+  batch_size: 64
+  epochs: 100
+  lr: 0.001
+  weight_decay: 0.0001
+  momentum: 0.9
+  step_size: 30
+  gamma: 0.1
+  seed: 0
+  log_interval: 10
+  test_interval: 1
+  num_workers: 4
+  device: cuda
+  experiment_name: fig-2a
+  is_debug: False
+  is_vis: False
+  is_save: True
+  save_interval: 10
+  checkpoint: False
+  checkpoint_interval: 10
+  checkpoint_dir: checkpoints
+  resume: False
+  resume_checkpoint: True
+  log_dir: logs
+  data_dir: data
+  model_dir: models
+  fig_dir: figs
+  config_dir: baselines/fig-2a
+  config_file: config.yaml
